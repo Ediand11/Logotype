@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import { createGlobalStyle } from "styled-components";
 import App from "./App";
+import { store } from "./store";
 
 const GlobalStyle = createGlobalStyle`* {
 font-family: 'Roboto', sans-serif;
@@ -25,7 +27,9 @@ a{
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+    <Provider store={store}>
+      <GlobalStyle />
+      <App />
+    </Provider>
   </React.StrictMode>
 );

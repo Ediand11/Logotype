@@ -1,19 +1,9 @@
 import { FC } from "react";
 import styled from "styled-components";
 import Oval from "../../../svg/Oval.svg";
+import { IPost } from "../../../types";
 
-interface IData {
-  title: string;
-  text: string;
-  tags: string;
-  autor: string;
-  img: string;
-  img_2x: string;
-  date: string;
-  views: string;
-}
-
-const Card: FC<{ data: IData }> = ({ data }) => {
+const Card: FC<{ data: IPost }> = ({ data }) => {
   return (
     <Root>
       <picture>
