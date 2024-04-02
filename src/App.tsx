@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { Header } from "./components/Header";
+import { PostPage } from "./pages/PostPage";
 
 function App() {
   return (
     <Root>
       <div id="modal"></div>
-      <Header />
+      <PostPage />
     </Root>
   );
 }
