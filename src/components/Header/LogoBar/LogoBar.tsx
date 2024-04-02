@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";
 import { CleanButton, Image } from "../../../styles";
@@ -7,7 +7,7 @@ import Logo from "../../../svg/logo.svg";
 import Search from "../../../svg/search.svg";
 import { MobileMenu } from "./MobileMenu";
 
-const LogoBar = () => {
+const LogoBar: FC = () => {
   const [mobileMenuIsShow, setMobileMenuIsShow] = useState(false);
   const toggleMobileMenu = () => {
     setMobileMenuIsShow((p) => !p);

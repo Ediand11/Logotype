@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import styled from "styled-components";
 import { CleanButton, Image } from "../../../styles";
 import Arrow from "../../../svg/chevron-down.svg";
 
-const NavBar = () => {
+const NavBar: FC = () => {
   const dropdownData = [
     {
       label: "Demos",
