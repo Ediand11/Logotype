@@ -5,7 +5,7 @@ import { Card } from "./Card";
 const Posts = () => {
   const { data } = useGetPostsQuery();
 
-  return <Grid>{data && data.map((article) => <Card data={article} />)}</Grid>;
+  return <Grid>{data && data.map((article, ind) => <Card key={ind} data={article} />)}</Grid>;
 };
 
 export default Posts;
