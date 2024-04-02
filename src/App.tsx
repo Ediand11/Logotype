@@ -13,7 +13,5 @@ function App() {
 export default App;
 
 const Root = styled.div`
-  width: 100vw;
-  height: 100vh;
   background-color: #fff;
 `;

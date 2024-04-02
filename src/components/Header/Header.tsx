@@ -16,11 +16,10 @@ export default Header;
 
 const Root = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 
   background-color: #fff;
   position: sticky;
+  z-index: 2;
   top: 0;
 `;
