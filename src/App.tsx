@@ -4,6 +4,7 @@ import { Header } from "./components/Header";
 function App() {
   return (
     <Root>
+      <div id="modal"></div>
       <Header />
     </Root>
   );

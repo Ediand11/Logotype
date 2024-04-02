@@ -1,13 +1,21 @@
+import { useState } from "react";
+import { createPortal } from "react-dom";
 import styled from "styled-components";
 import { CleanButton, Image } from "../../../styles";
 import Burger from "../../../svg/Burger.svg";
 import Logo from "../../../svg/logo.svg";
 import Search from "../../../svg/search.svg";
+import { MobileMenu } from "./MobileMenu";
 
 const LogoBar = () => {
+  const [mobileMenuIsShow, setMobileMenuIsShow] = useState(false);
+  const toggleMobileMenu = () => {
+    setMobileMenuIsShow((p) => !p);
+  };
+
   return (
     <Root>
-      <CleanButtonHideOnDesktop>
+      <CleanButtonHideOnDesktop onClick={toggleMobileMenu}>
         <Image src={Burger} alt="Burger" $widthForMobile="25px" />
       </CleanButtonHideOnDesktop>
 
@@ -16,6 +24,12 @@ const LogoBar = () => {
       <CleanButton>
         <Image src={Search} alt="Search" $widthForMobile="16px" />
       </CleanButton>
+
+      {mobileMenuIsShow &&
+        createPortal(
+          <MobileMenu isVisibility={mobileMenuIsShow} setVisibility={setMobileMenuIsShow} />,
+          document.getElementById("modal") || document.body
+        )}
     </Root>
   );
 };
